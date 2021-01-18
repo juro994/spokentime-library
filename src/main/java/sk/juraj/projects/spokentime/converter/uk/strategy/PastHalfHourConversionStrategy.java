@@ -7,20 +7,17 @@ import java.time.LocalTime;
 
 import sk.juraj.projects.spokentime.converter.ConversionStrategy;
 
-public class TrivialConverterStrategy implements ConversionStrategy {
+public class PastHalfHourConversionStrategy implements ConversionStrategy {
 
 	@Override
 	public String convert(LocalTime time) {
-		var minute = time.getMinute();
-		var minuteExpressionBuilder = new StringBuilder(convertMinute(minute));
-		if(minute < 10) {
-			minuteExpressionBuilder.insert(0, "oh ");
-		}
+		var minuteToConvert = 60 - time.getMinute();
+		var hourToConvert = time.getHour() == 23 ? 0 : time.getHour() + 1;
 		
-		var spokenHour = convertHour(adjustToTwelveHourFormat(time.getHour()));
-		var spokenMinute = minuteExpressionBuilder.toString();
+		var spokenMinute = convertMinute(minuteToConvert);
+		var spokenHour = convertHour(adjustToTwelveHourFormat(hourToConvert));
 		
-		return spokenHour + " " + spokenMinute;
+		return spokenMinute + " to " + spokenHour;
 	}
 
 }

@@ -6,13 +6,13 @@ import java.time.LocalTime;
 
 import org.junit.jupiter.api.Test;
 
-class RoundHourConverterStrategyTest {
+class PastHalfHourConversionStrategyTest {
 
 	@Test
 	void testConvert() {
-		var strategy = new RoundHourConverterStrategy();
-		var finalExpression = strategy.convert(LocalTime.of(9, 0));
-		assertTrue(finalExpression.contains("o'clock"));
+		var strategy = new PastHalfHourConversionStrategy();
+		var finalExpression = strategy.convert(LocalTime.of(10, 25));
+		assertTrue(finalExpression.contains("to"));
 	}
 
 }

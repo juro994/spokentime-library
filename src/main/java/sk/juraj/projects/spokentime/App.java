@@ -11,7 +11,6 @@ public class App {
 	public static void main(String[] args) {
 		if (args.length == 0) {
 			System.out.println("You need to provide an argument in a format of hh:mm");
-			System.exit(0);
 		} else {
 			var formatter = DateTimeFormatter.ofPattern("H:m");
 			var time = LocalTime.parse(args[0], formatter);

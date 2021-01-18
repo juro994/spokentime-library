@@ -6,11 +6,11 @@ import java.time.LocalTime;
 
 import org.junit.jupiter.api.Test;
 
-import sk.juraj.projects.spokentime.converter.uk.strategy.BeforeHalfHourConverterStrategy;
+import sk.juraj.projects.spokentime.converter.uk.strategy.BeforeHalfHourConversionStrategy;
 import sk.juraj.projects.spokentime.converter.uk.strategy.MidnightConversionStrategy;
 import sk.juraj.projects.spokentime.converter.uk.strategy.NoonConversionStrategy;
-import sk.juraj.projects.spokentime.converter.uk.strategy.PastHalfHourConverterStrategy;
-import sk.juraj.projects.spokentime.converter.uk.strategy.RoundHourConverterStrategy;
+import sk.juraj.projects.spokentime.converter.uk.strategy.PastHalfHourConversionStrategy;
+import sk.juraj.projects.spokentime.converter.uk.strategy.RoundHourConversionStrategy;
 import sk.juraj.projects.spokentime.converter.uk.strategy.TrivialConverterStrategy;
 
 class BritishConversionStrategyFactoryTest {
@@ -36,13 +36,13 @@ class BritishConversionStrategyFactoryTest {
 	@Test
 	void testGetStrategyIfTimeIsRound() {
 		var strategy = BritishConversionStrategyFactory.getStrategy(LocalTime.of(6, 0));
-		assertTrue(strategy instanceof RoundHourConverterStrategy);
+		assertTrue(strategy instanceof RoundHourConversionStrategy);
 	}
 	
 	@Test
 	void testGetStrategyIfTimeIsBeforeHalfHour() {
 		var strategy = BritishConversionStrategyFactory.getStrategy(LocalTime.of(7, 25));
-		assertTrue(strategy instanceof BeforeHalfHourConverterStrategy);
+		assertTrue(strategy instanceof BeforeHalfHourConversionStrategy);
 	}
 	
 	@Test
@@ -54,7 +54,7 @@ class BritishConversionStrategyFactoryTest {
 	@Test
 	void testGetStrategyIfTimeIsPastHalfHour() {
 		var strategy = BritishConversionStrategyFactory.getStrategy(LocalTime.of(7, 35));
-		assertTrue(strategy instanceof PastHalfHourConverterStrategy);
+		assertTrue(strategy instanceof PastHalfHourConversionStrategy);
 	}
 
 }

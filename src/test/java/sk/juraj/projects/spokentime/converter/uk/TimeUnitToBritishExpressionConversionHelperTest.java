@@ -4,35 +4,35 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class TimeUnitToBritishExpressionConverterTest {
+class TimeUnitToBritishExpressionConversionHelperTest {
 	
 	@Test
 	void testConvertMidnightHour() {
-		var expression = TimeUnitToBritishExpressionConverter.convertHour(0);
+		var expression = TimeUnitToBritishExpressionConversionHelper.convertHour(0);
 		assertEquals("midnight", expression);
 	}
 	
 	@Test
 	void testConvertStandardHour() {
-		var expression = TimeUnitToBritishExpressionConverter.convertHour(7);
+		var expression = TimeUnitToBritishExpressionConversionHelper.convertHour(7);
 		assertEquals("seven", expression);
 	}
 
 	@Test
 	void testConvertQuarterHourMinute() {
-		var expression = TimeUnitToBritishExpressionConverter.convertMinute(15);
+		var expression = TimeUnitToBritishExpressionConversionHelper.convertMinute(15);
 		assertEquals("quarter", expression);
 	}
 	
 	@Test
 	void testConvertHalfHourMinute() {
-		var expression = TimeUnitToBritishExpressionConverter.convertMinute(30);
+		var expression = TimeUnitToBritishExpressionConversionHelper.convertMinute(30);
 		assertEquals("half", expression);
 	}
 	
 	@Test
 	void testConvertStandardMinute() {
-		var expression = TimeUnitToBritishExpressionConverter.convertMinute(48);
+		var expression = TimeUnitToBritishExpressionConversionHelper.convertMinute(48);
 		assertEquals("forty eight", expression);
 	}
 
