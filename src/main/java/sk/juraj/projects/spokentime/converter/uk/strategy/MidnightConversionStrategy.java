@@ -4,11 +4,11 @@ import java.time.LocalTime;
 
 import sk.juraj.projects.spokentime.converter.ConversionStrategy;
 
-public class NoonConverterStrategy implements ConversionStrategy{
+public class MidnightConversionStrategy implements ConversionStrategy{
 
 	@Override
 	public String convert(LocalTime time) {
-		return "noon";
+		return "midnight";
 	}
 
 }

@@ -37,8 +37,6 @@ public class TimeUnitToBritishExpressionConverter {
 	public static String convertHour(int n) {
 		if (n == 0) {
 			return "midnight";
-		} else if (n == 12) {
-			return "noon";
 		} else {
 			return convertStandardTimeUnits(n);
 		}

@@ -9,7 +9,7 @@ public class BeforeHalfHourConverterStrategy implements ConversionStrategy{
 
 	@Override
 	public String convert(LocalTime time) {
-		return TimeUnitToBritishExpressionConverter.convertMinute(time.getMinute()) + " past " + TimeUnitToBritishExpressionConverter.convertHour(time.getHour());
+		return TimeUnitToBritishExpressionConverter.convertMinute(time.getMinute()) + " past " + TimeUnitToBritishExpressionConverter.convertHour(adjustToTwelveHourFormat(time.getHour()));
 	}
 
 }

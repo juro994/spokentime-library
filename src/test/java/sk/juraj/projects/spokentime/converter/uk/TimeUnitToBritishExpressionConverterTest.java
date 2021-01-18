@@ -13,12 +13,6 @@ class TimeUnitToBritishExpressionConverterTest {
 	}
 	
 	@Test
-	void testConvertNoonHour() {
-		var expression = TimeUnitToBritishExpressionConverter.convertHour(12);
-		assertEquals("noon", expression);
-	}
-	
-	@Test
 	void testConvertStandardHour() {
 		var expression = TimeUnitToBritishExpressionConverter.convertHour(7);
 		assertEquals("seven", expression);
